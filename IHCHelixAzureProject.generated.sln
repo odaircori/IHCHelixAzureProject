@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IHCHelixAzureProject", "IHCHelixAzureProject.csproj", "{83557AE6-0CA6-488A-ACDE-CE41ABFA8F54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "obj", "obj", "{CDA38F59-7E4C-4D05-A9CD-81D28B4CD277}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net8.0", "net8.0", "{ADBA85DD-3677-4A68-8B7B-DA0F7BFA546A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkerExtensions", "obj\net8.0\WorkerExtensions\WorkerExtensions.csproj", "{EF687E2E-51D2-45D1-B622-486FB898D163}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{8E309748-0BF7-47E7-85F6-7CC2564A5D94}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net8.0", "net8.0", "{CB28E526-F32F-4DF3-A6D2-D2591DC2A5C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkerExtensions", "obj\Debug\net8.0\WorkerExtensions\WorkerExtensions.csproj", "{06575FA6-1BF8-4DB3-80E9-8452B9CE7F48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83557AE6-0CA6-488A-ACDE-CE41ABFA8F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83557AE6-0CA6-488A-ACDE-CE41ABFA8F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83557AE6-0CA6-488A-ACDE-CE41ABFA8F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83557AE6-0CA6-488A-ACDE-CE41ABFA8F54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF687E2E-51D2-45D1-B622-486FB898D163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF687E2E-51D2-45D1-B622-486FB898D163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF687E2E-51D2-45D1-B622-486FB898D163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF687E2E-51D2-45D1-B622-486FB898D163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06575FA6-1BF8-4DB3-80E9-8452B9CE7F48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06575FA6-1BF8-4DB3-80E9-8452B9CE7F48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06575FA6-1BF8-4DB3-80E9-8452B9CE7F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06575FA6-1BF8-4DB3-80E9-8452B9CE7F48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ADBA85DD-3677-4A68-8B7B-DA0F7BFA546A} = {CDA38F59-7E4C-4D05-A9CD-81D28B4CD277}
+		{EF687E2E-51D2-45D1-B622-486FB898D163} = {ADBA85DD-3677-4A68-8B7B-DA0F7BFA546A}
+		{8E309748-0BF7-47E7-85F6-7CC2564A5D94} = {CDA38F59-7E4C-4D05-A9CD-81D28B4CD277}
+		{CB28E526-F32F-4DF3-A6D2-D2591DC2A5C6} = {8E309748-0BF7-47E7-85F6-7CC2564A5D94}
+		{06575FA6-1BF8-4DB3-80E9-8452B9CE7F48} = {CB28E526-F32F-4DF3-A6D2-D2591DC2A5C6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C26039A3-8FC2-4828-BF71-F1E11B934ED0}
+	EndGlobalSection
+EndGlobal

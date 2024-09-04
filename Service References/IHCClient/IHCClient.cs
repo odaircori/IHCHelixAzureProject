@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Text;
 using System.Threading.Tasks;
 
 namespace IHCHelixAzureProject.IHCClient
@@ -1301,6 +1302,7 @@ namespace IHCHelixAzureProject.IHCClient
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetASOs", ReplyAction="*")]
         IHCHelixAzureProject.IHCClient.GetASOsResponse GetASOs(IHCHelixAzureProject.IHCClient.GetASOsRequest request);
+        System.Threading.Tasks.Task<wsResultASO> GetASOsAsync(System.DateTime dtStart, System.DateTime dtEnd, string authKey);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/GetASOs", ReplyAction="*")]
         System.IAsyncResult BeginGetASOs(IHCHelixAzureProject.IHCClient.GetASOsRequest request, System.AsyncCallback callback, object asyncState);
@@ -1650,9 +1652,9 @@ namespace IHCHelixAzureProject.IHCClient
             return base.Channel.EndGetASOHelix(result);
         }
 
-        public Task<wsResultASO> GetASOsAsync(DateTime dtStart, DateTime dtEnd, string authKey)
+        public System.Threading.Tasks.Task<wsResultASO>GetASOsAsync(DateTime dtStart, DateTime dtEnd, string authKey)
         {
-            throw new NotImplementedException();
+            return base.Channel.GetASOsAsync(dtStart, dtEnd, authKey);
         }
 
         public Task<wsResultASO> GetExamsAsync(DateTime dtStart, DateTime dtEnd, string authKey)
@@ -1669,12 +1671,12 @@ namespace IHCHelixAzureProject.IHCClient
         {
             if ((endpointConfiguration == EndpointConfiguration.AsosSoap))
             {
-                System.ServiceModel.BasicHttpBinding result = new System.ServiceModel.BasicHttpBinding();
+                System.ServiceModel.BasicHttpsBinding result = new System.ServiceModel.BasicHttpsBinding();
                 result.MaxBufferSize = int.MaxValue;
                 result.ReaderQuotas = System.Xml.XmlDictionaryReaderQuotas.Max;
                 result.MaxReceivedMessageSize = int.MaxValue;
                 result.AllowCookies = true;
-                result.Security.Mode = System.ServiceModel.BasicHttpSecurityMode.Transport;
+                result.Security.Mode = System.ServiceModel.BasicHttpsSecurityMode.Transport;
                 return result;
             }
             if ((endpointConfiguration == EndpointConfiguration.AsosSoap12))
@@ -1697,11 +1699,11 @@ namespace IHCHelixAzureProject.IHCClient
         {
             if ((endpointConfiguration == EndpointConfiguration.AsosSoap))
             {
-                return new System.ServiceModel.EndpointAddress("https://medstatus.ihcare.com.br/ws/asos.asmx");
+                return new System.ServiceModel.EndpointAddress("https://brazil.medstatus.app/ws/asos.asmx");
             }
             if ((endpointConfiguration == EndpointConfiguration.AsosSoap12))
             {
-                return new System.ServiceModel.EndpointAddress("https://medstatus.ihcare.com.br/ws/asos.asmx");
+                return new System.ServiceModel.EndpointAddress("https://brazil.medstatus.app/ws/asos.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Não foi possível encontrar o ponto de extremidade com o nome \'{0}\'.", endpointConfiguration));
         }        

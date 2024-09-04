@@ -3,7 +3,12 @@
     "IHCHelixAzureProject": {
       "commandName": "Project",
       "commandLineArgs": "--port 7000",
-      "launchBrowser": false
+      "environmentVariables": {
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "GrpcServiceUrl": "http://localhost:7000"  
+        },
+        "applicationUrl": "http://localhost:7071",
+        "launchBrowser": false
     }
   }
 }
