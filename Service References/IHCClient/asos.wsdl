@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetASOs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dtStart" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtEnd" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="authKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetASOsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetASOsResult" type="tns:wsResultASO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="wsResultASO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfSpOCCASOExportReportByFilter_Result" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSpOCCASOExportReportByFilter_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="spOCCASOExportReportByFilter_Result" nillable="true" type="tns:spOCCASOExportReportByFilter_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="spOCCASOExportReportByFilter_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Patient" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Department" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PIS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtStatus" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Neighbour" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cellphone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BloodType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ASOType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtLastASO" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtLastValidThru" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ASOStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Base" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Offshore" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CostCenter" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Checkup" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="idCompany" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Altered" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IMC" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Height" nillable="true" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorCRM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorCRMUF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InternalID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Exam" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ASOResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EyeColor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicalRecords" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetExams">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dtStart" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtEnd" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="authKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExamsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExamsResult" type="tns:wsResultASO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetASOHelix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dtStart" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtEnd" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="authKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetASOHelixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetASOHelixResult" type="tns:wsResultASOHelix" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="wsResultASOHelix">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="result" type="tns:ArrayOfSpWSHelixASOs_Result" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSpWSHelixASOs_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="spWSHelixASOs_Result" nillable="true" type="tns:spWSHelixASOs_Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="spWSHelixASOs_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Trabalhador" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tipo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Data" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Local" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Responsavel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Apto" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsResultASO" nillable="true" type="tns:wsResultASO" />
+      <s:element name="wsResultASOHelix" nillable="true" type="tns:wsResultASOHelix" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetASOsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetASOs" />
+  </wsdl:message>
+  <wsdl:message name="GetASOsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetASOsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExamsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExams" />
+  </wsdl:message>
+  <wsdl:message name="GetExamsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetASOHelixSoapIn">
+    <wsdl:part name="parameters" element="tns:GetASOHelix" />
+  </wsdl:message>
+  <wsdl:message name="GetASOHelixSoapOut">
+    <wsdl:part name="parameters" element="tns:GetASOHelixResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetASOsHttpGetIn">
+    <wsdl:part name="dtStart" type="s:string" />
+    <wsdl:part name="dtEnd" type="s:string" />
+    <wsdl:part name="authKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetASOsHttpGetOut">
+    <wsdl:part name="Body" element="tns:wsResultASO" />
+  </wsdl:message>
+  <wsdl:message name="GetExamsHttpGetIn">
+    <wsdl:part name="dtStart" type="s:string" />
+    <wsdl:part name="dtEnd" type="s:string" />
+    <wsdl:part name="authKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExamsHttpGetOut">
+    <wsdl:part name="Body" element="tns:wsResultASO" />
+  </wsdl:message>
+  <wsdl:message name="GetASOHelixHttpGetIn">
+    <wsdl:part name="dtStart" type="s:string" />
+    <wsdl:part name="dtEnd" type="s:string" />
+    <wsdl:part name="authKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetASOHelixHttpGetOut">
+    <wsdl:part name="Body" element="tns:wsResultASOHelix" />
+  </wsdl:message>
+  <wsdl:message name="GetASOsHttpPostIn">
+    <wsdl:part name="dtStart" type="s:string" />
+    <wsdl:part name="dtEnd" type="s:string" />
+    <wsdl:part name="authKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetASOsHttpPostOut">
+    <wsdl:part name="Body" element="tns:wsResultASO" />
+  </wsdl:message>
+  <wsdl:message name="GetExamsHttpPostIn">
+    <wsdl:part name="dtStart" type="s:string" />
+    <wsdl:part name="dtEnd" type="s:string" />
+    <wsdl:part name="authKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExamsHttpPostOut">
+    <wsdl:part name="Body" element="tns:wsResultASO" />
+  </wsdl:message>
+  <wsdl:message name="GetASOHelixHttpPostIn">
+    <wsdl:part name="dtStart" type="s:string" />
+    <wsdl:part name="dtEnd" type="s:string" />
+    <wsdl:part name="authKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetASOHelixHttpPostOut">
+    <wsdl:part name="Body" element="tns:wsResultASOHelix" />
+  </wsdl:message>
+  <wsdl:portType name="AsosSoap">
+    <wsdl:operation name="GetASOs">
+      <wsdl:input message="tns:GetASOsSoapIn" />
+      <wsdl:output message="tns:GetASOsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExams">
+      <wsdl:input message="tns:GetExamsSoapIn" />
+      <wsdl:output message="tns:GetExamsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetASOHelix">
+      <wsdl:input message="tns:GetASOHelixSoapIn" />
+      <wsdl:output message="tns:GetASOHelixSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AsosHttpGet">
+    <wsdl:operation name="GetASOs">
+      <wsdl:input message="tns:GetASOsHttpGetIn" />
+      <wsdl:output message="tns:GetASOsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExams">
+      <wsdl:input message="tns:GetExamsHttpGetIn" />
+      <wsdl:output message="tns:GetExamsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetASOHelix">
+      <wsdl:input message="tns:GetASOHelixHttpGetIn" />
+      <wsdl:output message="tns:GetASOHelixHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AsosHttpPost">
+    <wsdl:operation name="GetASOs">
+      <wsdl:input message="tns:GetASOsHttpPostIn" />
+      <wsdl:output message="tns:GetASOsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExams">
+      <wsdl:input message="tns:GetExamsHttpPostIn" />
+      <wsdl:output message="tns:GetExamsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetASOHelix">
+      <wsdl:input message="tns:GetASOHelixHttpPostIn" />
+      <wsdl:output message="tns:GetASOHelixHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AsosSoap" type="tns:AsosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetASOs">
+      <soap:operation soapAction="http://tempuri.org/GetASOs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExams">
+      <soap:operation soapAction="http://tempuri.org/GetExams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetASOHelix">
+      <soap:operation soapAction="http://tempuri.org/GetASOHelix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AsosSoap12" type="tns:AsosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetASOs">
+      <soap12:operation soapAction="http://tempuri.org/GetASOs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExams">
+      <soap12:operation soapAction="http://tempuri.org/GetExams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetASOHelix">
+      <soap12:operation soapAction="http://tempuri.org/GetASOHelix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AsosHttpGet" type="tns:AsosHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetASOs">
+      <http:operation location="/GetASOs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExams">
+      <http:operation location="/GetExams" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetASOHelix">
+      <http:operation location="/GetASOHelix" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AsosHttpPost" type="tns:AsosHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetASOs">
+      <http:operation location="/GetASOs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExams">
+      <http:operation location="/GetExams" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetASOHelix">
+      <http:operation location="/GetASOHelix" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Asos">
+    <wsdl:port name="AsosSoap" binding="tns:AsosSoap">
+      <soap:address location="https://brazil.medstatus.app/ws/asos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AsosSoap12" binding="tns:AsosSoap12">
+      <soap12:address location="https://brazil.medstatus.app/ws/asos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AsosHttpGet" binding="tns:AsosHttpGet">
+      <http:address location="https://brazil.medstatus.app/ws/asos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AsosHttpPost" binding="tns:AsosHttpPost">
+      <http:address location="https://brazil.medstatus.app/ws/asos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
